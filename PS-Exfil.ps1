@@ -17,7 +17,7 @@ $files = Get-ChildItem -Path $folderPath -File -Recurse | Where-Object { $_.Leng
 $context = New-AzStorageContext -ConnectionString $connectionString
 
 foreach ($file in $files) {
-    $containerName = "all"
+    $containerName = "loot"
     $blobName = $file.Name
 
     $container = Get-AzStorageContainer -Context $context | Where-Object { $_.Name -eq $containerName }
